@@ -1,0 +1,148 @@
+.catalog {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 24px;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  color: #222;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.total-count {
+  text-align: center;
+  font-size: 18px;
+  margin-bottom: 20px;
+  padding: 8px;
+  background: #f0f0f0;
+  border-radius: 8px;
+}
+
+.movie-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.movie-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  transition: transform 0.15s ease;
+}
+
+.movie-card:hover {
+  transform: translateY(-2px);
+}
+
+.movie-info h3 {
+  margin: 0 0 4px 0;
+}
+
+.movie-info p {
+  margin: 2px 0;
+  font-size: 14px;
+}
+
+.recommended {
+  color: #1b8a2f;
+  font-weight: bold;
+}
+
+.rating-high {
+  background-color: #e6f7ea;
+  border-left: 6px solid #2ecc71;
+}
+
+.rating-medium {
+  background-color: #fff8e1;
+  border-left: 6px solid #f1c40f;
+}
+
+.rating-low {
+  background-color: #fdecea;
+  border-left: 6px solid #e74c3c;
+}
+
+.delete-btn {
+  background: #e74c3c;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.delete-btn:hover {
+  background: #c0392b;
+}
+
+.empty-message {
+  text-align: center;
+  color: #888;
+  font-style: italic;
+}
+
+hr {
+  margin: 28px 0;
+  border: none;
+  border-top: 1px solid #ddd;
+}
+
+.add-form {
+  background: #fafafa;
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid #eee;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 14px;
+}
+
+.form-field label {
+  font-size: 13px;
+  margin-bottom: 4px;
+  color: #555;
+}
+
+.form-field input {
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.add-btn {
+  background: #3498db;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.add-btn:disabled {
+  background: #b0c4d8;
+  cursor: not-allowed;
+}
+
+.add-btn:not(:disabled):hover {
+  background: #2980b9;
+}
+
+.hint {
+  font-size: 12px;
+  color: #999;
+  margin-top: 8px;
+}

@@ -1,0 +1,82 @@
+<div class="catalog">
+  <h1>🎬 Каталог фільмів</h1>
+
+  <div class="total-count">
+    Всього фільмів: <strong>{{ movies.length }}</strong>
+  </div>
+
+  <div class="movie-list">
+    <div
+      class="movie-card"
+      *ngFor="let movie of movies; let i = index"
+      [ngClass]="getRatingClass(movie.rating)"
+    >
+      <div class="movie-info">
+        <h3>{{ movie.title }}</h3>
+        <p>Рік: {{ movie.year }}</p>
+        <p>Рейтинг: {{ movie.rating }}/10</p>
+        <p class="recommended" *ngIf="movie.rating >= 8">
+          ✅ Рекомендовано
+        </p>
+      </div>
+
+      <button class="delete-btn" (click)="removeMovie(i)">
+        Видалити
+      </button>
+    </div>
+
+    <p *ngIf="movies.length === 0" class="empty-message">
+      Список фільмів порожній
+    </p>
+  </div>
+
+  <hr />
+
+  <div class="add-form">
+    <h2>Додати новий фільм</h2>
+
+    <div class="form-field">
+      <label for="title">Назва</label>
+      <input
+        id="title"
+        type="text"
+        [(ngModel)]="newTitle"
+        placeholder="Наприклад, Дюна"
+      />
+    </div>
+
+    <div class="form-field">
+      <label for="year">Рік</label>
+      <input
+        id="year"
+        type="number"
+        [(ngModel)]="newYear"
+        placeholder="2021"
+      />
+    </div>
+
+    <div class="form-field">
+      <label for="rating">Рейтинг (1-10)</label>
+      <input
+        id="rating"
+        type="number"
+        min="1"
+        max="10"
+        [(ngModel)]="newRating"
+        placeholder="8"
+      />
+    </div>
+
+    <button
+      class="add-btn"
+      (click)="addMovie()"
+      [disabled]="!isFormValid()"
+    >
+      Додати фільм
+    </button>
+
+    <p class="hint" *ngIf="!newTitle.trim()">
+      Введіть назву фільму, щоб активувати кнопку
+    </p>
+  </div>
+</div>
