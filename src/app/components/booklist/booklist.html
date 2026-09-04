@@ -1,0 +1,46 @@
+<div class="library">
+  <h1>Моя бібліотека</h1>
+
+  <form (ngSubmit)="onAddBook()" class="book-form">
+    <input
+      type="text"
+      name="title"
+      placeholder="Назва книги"
+      [(ngModel)]="title"
+      required
+    />
+
+    <input
+      type="text"
+      name="author"
+      placeholder="Автор"
+      [(ngModel)]="author"
+      required
+    />
+
+    <input
+      type="number"
+      name="pages"
+      placeholder="Кількість сторінок"
+      [(ngModel)]="pages"
+      required
+    />
+
+    <button type="submit">Додати книгу</button>
+  </form>
+
+  <div class="book-list">
+    @for (book of books(); track book.id) {
+      <div class="book-card">
+        <h3>{{ book.title }}</h3>
+        <p>Автор: {{ book.author }}</p>
+        <p>Сторінок: {{ book.pages }}</p>
+        <button (click)="onRemoveBook(book.id)">Видалити</button>
+      </div>
+    }
+
+    @empty {
+      <p>Книг поки немає.</p>
+    }
+  </div>
+</div>
