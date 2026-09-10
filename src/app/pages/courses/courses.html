@@ -1,0 +1,7 @@
+<h1>Список курсів</h1>
+
+<div *ngFor="let course of courses" style="margin-bottom: 16px;">
+  <h3>{{ course.title }}</h3>
+  <p>Викладач: {{ course.teacher }}</p>
+  <a [routerLink]="['/course', course.id]">Переглянути курс</a>
+</div>
