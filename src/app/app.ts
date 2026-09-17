@@ -1,12 +1,11 @@
-import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component } from '@angular/core';
+import { AddCourseComponent } from './add-course/add-course';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
-  templateUrl: './app.html',
-  styleUrl: './app.css'
+  standalone: true,
+  imports: [AddCourseComponent],
+  templateUrl: './app.html'
 })
 export class App {
-  protected readonly title = signal('clash-royale');
 }
