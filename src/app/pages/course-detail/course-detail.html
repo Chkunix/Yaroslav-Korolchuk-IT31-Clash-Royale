@@ -1,0 +1,7 @@
+@if (course) {
+  <h2>{{ course.title }}</h2>
+  <p>Викладач: {{ course.teacher }}</p>
+  <p>{{ course.description }}</p>
+} @else {
+  <p>Курс не знайдено</p>
+}
